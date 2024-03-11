@@ -9,6 +9,7 @@ void setup()
 
 void loop()
 {
+  //R
   digitalWrite(LED_BUILTIN, HIGH);
   delay(1000); // Wait for 1000 millisecond(s)
   digitalWrite(LED_BUILTIN, LOW);
@@ -21,7 +22,8 @@ void loop()
   delay(1000); // Wait for 1000 millisecond(s)
   digitalWrite(LED_BUILTIN, LOW);
   delay(2000); // Wait for 2000 millisecond(s)
-  
+
+  //i
   digitalWrite(LED_BUILTIN, HIGH);
   delay(1000); // Wait for 1000 millisecond(s)
   digitalWrite(LED_BUILTIN, LOW);
@@ -30,7 +32,8 @@ void loop()
   delay(1000); // Wait for 1000 millisecond(s)
   digitalWrite(LED_BUILTIN, LOW);
   delay(2000); // Wait for 2000 millisecond(s)
-  
+
+  //l
   digitalWrite(LED_BUILTIN, HIGH);
   delay(1000); // Wait for 1000 millisecond(s)
   digitalWrite(LED_BUILTIN, LOW);
@@ -47,12 +50,14 @@ void loop()
   delay(1000); // Wait for 1000 millisecond(s)
   digitalWrite(LED_BUILTIN, LOW);
   delay(2000); // Wait for 2000 millisecond(s)
-  
+
+  //e
   digitalWrite(LED_BUILTIN, HIGH);
   delay(1000); // Wait for 1000 millisecond(s)
   digitalWrite(LED_BUILTIN, LOW);
   delay(2000); // Wait for 1000 millisecond(s)
-  
+
+  //y
   digitalWrite(LED_BUILTIN, HIGH);
   delay(2000); // Wait for 1000 millisecond(s)
   digitalWrite(LED_BUILTIN, LOW);
