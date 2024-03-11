@@ -1,0 +1,53 @@
+// C++ code
+//
+
+//.-. .. .-.. . -.--
+void setup()
+{
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+void dot()
+{
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+}
+void line()
+{
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(2000); // Wait for 2000 millisecond(s)
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+}
+ 
+void space()
+{
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(2000); // Wait for 2000 millisecond(s
+}
+void loop()
+{
+  dot();
+  line();
+  dot();
+  space();
+  
+  dot();
+  dot();
+  space();
+  
+  dot();
+  line();
+  dot();
+  dot();
+  space();
+  
+  dot();
+  space();
+  
+  line();
+  dot();
+  line();
+  line();
+}
