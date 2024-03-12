@@ -1,19 +1,21 @@
 bool initialRun = true;
 
-void setup() {
+void setup() 
+{
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
-  
 }
 
-void dot() {
+void dot() 
+{
   digitalWrite(LED_BUILTIN, HIGH);
   delay(1000);
   digitalWrite(LED_BUILTIN, LOW);
   delay(1000); 
 }
 
-void line() {
+void line() 
+{
   digitalWrite(LED_BUILTIN, HIGH);
   delay(2000);
   digitalWrite(LED_BUILTIN, LOW);
@@ -25,7 +27,8 @@ void space() {
   delay(1000);
 }
 
-void blinkMorsecode(const char* message) {
+void blinkMorsecode(const char* message) 
+{
   for (int i = 0; message[i] != '\0'; ++i) 
   {
     switch (tolower(message[i])) 
@@ -207,7 +210,8 @@ void loop()
 {
   const char* message = "Riley"; //change message line
 
-  if (initialRun) {
+  if (initialRun) 
+{
     Serial.println("Message playing.");
     Serial.println(message);
     blinkMorsecode(message);
