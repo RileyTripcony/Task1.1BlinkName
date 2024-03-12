@@ -164,8 +164,39 @@ void blinkMorse(const char* message) {
         dot();
         dot();
         break;
+      case '?':
+        dot();
+        dot();
+        line();
+        line();
+        dot();
+        dot();
+      	break;
+      case '!':
+        line();
+        dot();
+        line();
+        dot();
+        line();
+        line();
+      	break;
+      case '.':
+        dot();
+        line();
+        dot();
+        line();
+        dot();
+        line();
+      	break;
+      case ',':
+        line();
+        line();
+        dot();
+        dot();
+        line();
+        line();
+		    break;		
       case ' ':
-        space();
         break;
     }
     space(); 
@@ -174,7 +205,7 @@ void blinkMorse(const char* message) {
 
 void loop() 
 {
-  const char* message = "Riley";
+  const char* message = "Riley"; //change message line
 
   if (initialRun) {
     Serial.println("Message playing.");
