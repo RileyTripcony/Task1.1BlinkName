@@ -1,0 +1,190 @@
+bool initialRun = true;
+
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600);
+  
+}
+
+void dot() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000); 
+}
+
+void line() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(2000);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000);
+}
+
+void space() {
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(2000);
+}
+
+void blinkMorse(const char* message) {
+  for (int i = 0; message[i] != '\0'; ++i) 
+  {
+    switch (tolower(message[i])) 
+    {
+      case 'a':
+        dot();
+        line();
+        break;
+      case 'b':
+        line();
+        dot();
+        dot();
+        dot();
+        break;
+      case 'c':
+        line();
+        dot();
+        line();
+        dot();
+        break;
+      case 'd':
+        line();
+        dot();
+        dot();
+        break;
+      case 'e':
+        dot();
+        break;
+      case 'f':
+        dot();
+        dot();
+        line();
+        dot();
+        break;
+      case 'g':
+        line();
+        line();
+        dot();
+        break;
+      case 'h':
+        dot();
+        dot();
+        dot();
+        dot();
+        break;
+      case 'i':
+        dot();
+        dot();
+        break;
+      case 'j':
+        dot();
+        line();
+        line();
+        line();
+        break;
+      case 'k':
+        line();
+        dot();
+        line();
+        break;
+      case 'l':
+        dot();
+        line();
+        dot();
+        dot();
+        break;
+      case 'm':
+        line();
+        line();
+        break;
+      case 'n':
+        line();
+        dot();
+        break;
+      case 'o':
+        line();
+        line();
+        line();
+        break;
+      case 'p':
+        dot();
+        line();
+        line();
+        dot();
+        break;
+      case 'q':
+        line();
+        line();
+        dot();
+        line();
+        break;
+      case 'r':
+        dot();
+        line();
+        dot();
+        break;
+      case 's':
+        dot();
+        dot();
+        dot();
+        break;
+      case 't':
+        line();
+        break;
+      case 'u':
+        dot();
+        dot();
+        line();
+        break;
+      case 'v':
+        dot();
+        dot();
+        dot();
+        line();
+        break;
+      case 'w':
+        dot();
+        line();
+        line();
+        break;
+      case 'x':
+        line();
+        dot();
+        dot();
+        line();
+        break;
+      case 'y':
+        line();
+        dot();
+        line();
+        line();
+        break;
+      case 'z':
+        line();
+        line();
+        dot();
+        dot();
+        break;
+      case ' ':
+        space();
+        break;
+    }
+    space(); 
+  }
+}
+
+void loop() 
+{
+  const char* message = "Riley";
+
+  if (initialRun) {
+    Serial.println("Message playing.");
+    Serial.println(message);
+    blinkMorse(message);
+    initialRun = false;
+  } 
+  else 
+  {
+    Serial.println("Message repeating...");
+    blinkMorse(message);
+  }
+}
